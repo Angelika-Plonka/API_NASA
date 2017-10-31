@@ -1,3 +1,25 @@
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 5;
+}
+#status {
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    background-image:url('../images/preloader.gif');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.hidden {
+    display: none;
+}
+
 section {
     width: 100vw;
     height: 100vh;
@@ -7,23 +29,23 @@ section {
 }
 
 main {
-    position: relative;
+    position: absolute;
     float: left;
-    top: 50%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, 20%);
+    transform: translateX(-50%);
 }
 div.information, div.date {
     color: white;
 }
 
 div.information {
-    top: 50%;
+    top: 70%;
     font-size: 2.5em;
 }
 
 div.date {
-    top: 50%;
+    top: 70%;
     font-size: 2em;
 }
 #image {

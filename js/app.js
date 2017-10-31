@@ -1,13 +1,21 @@
 $(function() {
 
+    $("#status").fadeIn(5000);
+    $("#preloader").fadeIn(5000);
+    $.get(url, function(){
+        $("#status").fadeOut(5000);
+        $("#preloader").fadeOut(5000);
+    });
+
     var url = 'https://api.nasa.gov/planetary/apod?api_key=F4kwZZhW5UBGq3ftEIIdRw1WohNzsxc1XWim75nP';
-    var $section = $('#background-image');
+    var $background = $('#background-image');
     var imageInformation = $('.information');
     var imageDate = $('.date');
     var nextButton = $('.next_image');
-    var mainContent = $('main');
+    var mainSection = $('main');
 
     function newBackground() {
+        mainSection.addClass('hidden');
 
         //function for random years, months and days
         function random(min, max) {
@@ -28,22 +36,23 @@ $(function() {
         }).done(function (response) {
             var background = response.hdurl;
 
-            nextButton.fadeTo(5000, 1);
-            $section.fadeTo(5000, 1).css('background-image', 'url(' + background + ')');
+            nextButton.fadeIn(5000);
+            $background.fadeIn(5000).css('background-image', 'url(' + background + ')');
             var title = response.title;
             var date = response.date;
             imageInformation.text(title);
             imageDate.text('Taken: ' + date);
-        }).fail(function (error) {
-            alert("Nie można połączyć się z API NASA");
+            mainSection.delay(3000).fadeIn(5000);
+        }).fail(function () {
+            console.log("Nie można połączyć się z API NASA");
         });
     }
 
     newBackground();
 
     nextButton.on('click', function () {
-        $(this).fadeTo(1000, 0);
-        $section.fadeTo(1000, 0.7);
+        $(this).fadeOut(1000);
+        $background.fadeOut(5000);
         newBackground();
     });
 });

@@ -1,0 +1,45 @@
+section {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+main {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+div.information, div.date {
+    color: white;
+}
+
+div.information {
+    top: 50%;
+    font-size: 2.5em;
+}
+
+div.date {
+    top: 50%;
+    font-size: 2em;
+}
+#image {
+    text-align: center;
+}
+
+.next_image {
+    margin: 3vh;
+    padding: 5px;
+    font-size: 1.5em;
+    border-radius: 4px;
+    border: transparent;
+    color: white;
+    background-color: gray;
+}
+.next_image:focus {
+    outline: none;
+    border: transparent;
+}

@@ -1,7 +1,7 @@
 $(function() {
 
-    $("#status").fadeIn(5000);
-    $("#preloader").fadeIn(5000);
+    $("#status").fadeIn();
+    $("#preloader").fadeIn();
     $.get(url, function(){
         $("#status").fadeOut(5000);
         $("#preloader").fadeOut(5000);
@@ -52,7 +52,6 @@ $(function() {
 
     nextButton.on('click', function () {
         $(this).fadeOut(1000);
-        $background.fadeOut(5000);
         newBackground();
     });
 });
